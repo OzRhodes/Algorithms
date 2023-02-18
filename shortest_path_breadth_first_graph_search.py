@@ -60,7 +60,8 @@ def shortest_path(parentNodes, start, end):
 	return path
 		
 
-path = breadth_first_shortest_path(graph,0)
+if __name__ == '__main__':
+	path = breadth_first_shortest_path(graph,0)
 
-print(shortest_path(path,0,1)) #[0,5,4,1]
+	print(shortest_path(path,0,1)) #[0,5,4,1]
 	

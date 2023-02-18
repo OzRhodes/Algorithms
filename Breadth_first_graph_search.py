@@ -43,7 +43,10 @@ def breadth_first(graph, start):
 				queue.append(connection)
 	return result
 
-print(breadth_first(graph,0))
+
+if __name__ == '__main__':
+	
+	print(breadth_first(graph,0))
 	 		
 	
 
