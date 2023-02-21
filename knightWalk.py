@@ -41,25 +41,32 @@ def knightWalk(start, end):
     while (queue):
         currentLoc = queue.pop()
         for i in range(8):
-            #current()
+            # Calculate the possible list of next positions
             newLoc = (currentLoc[0]+moves[i][0],currentLoc[1]+moves[i][1],jumps)
-            print(newLoc)
+            # check to see if you are at the destination
+            if newLoc[0]==dest[0] and newLoc[1] ==dest[1]:
+                return (f"Destination {dest} reached and it took {jumps} jumps")
+            # If the possible steps are "off the board" ie <0 >7 for x or y then discount
             if newLoc[0]>=0 and newLoc[0]<=7 and newLoc[1]>=0 and newLoc[1]<=7:
-                queue.append(newLoc)
-            print(queue)
-            return
+                if newLoc not in visited:
+                    queue.append(newLoc)
+                    visited.append(newLoc)
+                    print(visited)
+            jumps +=1
+
+    return "Not possible to get to destination"
 
 
-# Calculate the possible list of next positions
+
 
     
     return
 
-# If the possible steps are "off the board" ie <0 >7 for x or y then discount
+
 # Add the list of possile locations to a queue with the 'cost/step number'
 # step through the queue to see if the position is the destination and if not,
 # Add these positions to the queue
 
 start = ('d',4)
-end = ('b',3)
+end = ('h',3)
 print(knightWalk(start,end))
